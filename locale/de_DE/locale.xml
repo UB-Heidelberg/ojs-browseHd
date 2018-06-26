@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * locale.xml
+  *
+  * Copyright (c) 2014-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  * Localization information: https://pkp.sfu.ca/wiki/index.php?title=OJS:_German_(de_DE)
+  * Localization strings.
+  -->
+
+<locale name="de_DE" full_name="Deutsch (Deutschland)">
+  <message key="plugins.block.browse.title">Durchblättern</message>
+	<message key="plugins.block.browse.displayName">"Durchblättern"-Block</message>
+	<message key="plugins.block.browse.description">Dieses Plugin stellt Autoren und Rubriken "durchblättern" Links in der Sidebar bereit.</message>
+  <message key="plugins.block.browse.link.section">Nach Rubrik</message>
+</locale>
