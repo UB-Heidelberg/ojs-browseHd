@@ -12,8 +12,8 @@
   -->
 
 <locale name = "fr_CA" full_name = "Français (Canada)">
-  <message key="plugins.block.browse.title">Browse</message>
-	<message key="plugins.block.browse.displayName">"Browse" Block</message>
+  <message key="plugins.block.browse.title">Explorer</message>
+	<message key="plugins.block.browse.displayName">"Explorer" Block</message>
 	<message key="plugins.block.browse.description">This plugin provides "browse by" author and section links in the sidebar.</message>
-  <message key="plugins.block.browse.link.section">By Section</message>
+  <message key="plugins.block.browse.link.section">Par rubrique</message>
 </locale>
