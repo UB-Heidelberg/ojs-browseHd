@@ -11,7 +11,7 @@
   * Localization strings.
   -->
 
-<locale name="en_US" full_name="U.S. English">
+<locale name="zh_CN" full_name="简体中文">
   <message key="plugins.block.browse.title">Browse</message>
 	<message key="plugins.block.browse.displayName">"Browse" Block</message>
 	<message key="plugins.block.browse.description">This plugin provides "browse by" author and section links in the sidebar.</message>
