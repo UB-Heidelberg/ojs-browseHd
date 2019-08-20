@@ -13,7 +13,7 @@
 
 <locale name="fr_FR" full_name="Français (France)">
   <message key="plugins.generic.browseHd.title">Explorer</message>
-	<message key="plugins.generic.browseHd.displayName">"Explorer" Block</message>
+	<message key="plugins.generic.browseHd.displayName">Explorer-Block (UB Heidelberg)</message>
 	<message key="plugins.generic.browseHd.description">This plugin provides "browse by" author and section links in the sidebar.</message>
         <message key="plugins.generic.browseHd.link.section">Par rubrique</message>
         <message key="plugins.generic.browseHd.search.sectionIndex">Section Index</message>

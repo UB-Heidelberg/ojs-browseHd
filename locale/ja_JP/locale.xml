@@ -14,7 +14,7 @@
 
 <locale name="ja_JP" full_name="日本語">
 	<message key="plugins.generic.browseHd.title">ブラウズ</message>
-	<message key="plugins.generic.browseHd.displayName">"ブラウズ" Block</message>
+	<message key="plugins.generic.browseHd.displayName">"ブラウズ" (UB Heidelberg)</message>
 	<message key="plugins.generic.browseHd.description">This plugin provides "browse by" author and section links in the sidebar.</message>
         <message key="plugins.generic.browseHd.link.section">セクションによるブラウズ</message>
         <message key="plugins.generic.browseHd.search.sectionIndex">Section Index</message>

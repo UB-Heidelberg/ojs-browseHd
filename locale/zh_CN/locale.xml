@@ -13,7 +13,7 @@
 
 <locale name="zh_CN" full_name="简体中文">
         <message key="plugins.generic.browseHd.title">浏览</message>
-	<message key="plugins.generic.browseHd.displayName">"Browse" Block</message>
+	<message key="plugins.generic.browseHd.displayName">Browse-Block (UB Heidelberg)</message>
 	<message key="plugins.generic.browseHd.description">This plugin provides "browse by" author and section links in the sidebar.</message>
         <message key="plugins.generic.browseHd.link.section">By Section</message>
         <message key="plugins.generic.browseHd.search.sectionIndex">Section Index</message>

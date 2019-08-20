@@ -13,7 +13,7 @@
 
 <locale name="de_DE" full_name="Deutsch (Deutschland)">
   <message key="plugins.generic.browseHd.title">Durchblättern</message>
-	<message key="plugins.generic.browseHd.displayName">"Durchblättern"-Block</message>
+	<message key="plugins.generic.browseHd.displayName">Durchblättern-Block (UB Heidelberg)</message>
 	<message key="plugins.generic.browseHd.description">Dieses Plugin stellt Autoren und Rubriken "durchblättern" Links in der Sidebar bereit.</message>
         <message key="plugins.generic.browseHd.link.section">Nach Rubrik</message>
         <message key="plugins.generic.browseHd.search.sectionIndex">Rubrikenübersicht</message>
