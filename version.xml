@@ -11,10 +11,10 @@
   * Plugin version information.
   -->
 <version>
-	<application>browse</application>
-	<type>plugins.blocks</type>
+	<application>browseHd</application>
+	<type>plugins.generic</type>
 	<release>0.1.0.0</release>
 	<date>2018-06-29</date>
 	<lazy-load>1</lazy-load>
-	<class>BrowseBlockPlugin</class>
+	<class>BrowseHdPlugin</class>
 </version>

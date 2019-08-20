@@ -11,8 +11,8 @@
   * Localization strings.
   -->
 
-<locale name="tr_TR" full_name="Türkçe">
-        <message key="plugins.generic.browseHd.title">Araştır</message>
+<locale name="en_US" full_name="U.S. English">
+  <message key="plugins.generic.browseHd.title">Selaa</message>
 	<message key="plugins.generic.browseHd.displayName">"Browse" Block</message>
 	<message key="plugins.generic.browseHd.description">This plugin provides "browse by" author and section links in the sidebar.</message>
         <message key="plugins.generic.browseHd.link.section">By Section</message>
@@ -21,12 +21,12 @@
         <message key="plugins.generic.browseHd.search.categoryIndex">Category Index</message>
 
         <!-- Section Browsing -->
-        <message key="plugins.generic.browseHd.emptySection">Nothing has been published in this section yet.</message>
+        <message key="plugins.generic.browseHd.emptySection">Tässä osastossa ei ole julkaistu vielä mitään.</message>
         <message key="plugins.generic.browseHd.search.sectionDetails">Section Details</message>
-        <message key="plugins.generic.browseHd.section.browseTitles">{$numTitles} items</message>
+        <message key="plugins.generic.browseHd.section.browseTitles">{$numTitles} nimikettä</message>
 
         <!-- Section Management -->
-        <message key="plugins.generic.browseHd.browsingLabel">Browsing</message>
-        <message key="plugins.generic.browseHd.enableBrowsing">Enable an archive of all submissions published in this section.</message>
-        <message key="plugins.generic.browseHd.browseByDescriptionLabel">Section Description</message>
+        <message key="plugins.generic.browseHd.browsingLabel">Osaston selaustoiminto</message>
+        <message key="plugins.generic.browseHd.enableBrowsing">Ota osastoa koskeva julkinen arkisto käyttöön.</message>
+        <message key="plugins.generic.browseHd.browseByDescriptionLabel">Osaston arkiston kuvaus</message>
 </locale>

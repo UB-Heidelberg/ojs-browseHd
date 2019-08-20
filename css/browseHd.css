@@ -1,0 +1,141 @@
+.page_catalog_category .cmp_breadcrumbs_catalog {
+    display:none;
+}
+
+.cmp_breadcrumbs_sections_browseHd {
+    min-height:55px;
+}
+
+.cmp_breadcrumbs_authors_browseHd {
+    min-height:55px;
+}
+
+.cmp_breadcrumbs_catalog_browseHd {
+    min-height:55px;
+}
+
+
+.browseHd {
+    margin-top:30px;
+}
+
+.browseHd_description {
+    padding-bottom:25px;
+}
+
+.browseHd_section_articles_listing {
+    list-style: none;
+    padding-left:0;
+}
+
+.browseHd_section_articles_listing li {
+    margin-bottom:20px;
+}
+
+.browseHd_section_articles_listing li a {
+    text-decoration:none;
+}
+
+.browseHd_section_articles_listing li .browse_section_journal {
+    font-size:85%;
+}
+
+.browseHd_section_articles_listing li .browse_section_title {
+    font-weight:700;
+}
+
+.browseHd_section_articles_listing li .browse_section_issue {
+    font-size:85%;
+}
+
+.browseHd_section_articles_listing li .browse_section_authors {
+    font-style:italic;
+    font-size:85%;
+}
+
+.browseHd_section_listing {
+    list-style: none;
+    padding-left:0;
+}
+
+.browseHd_section_listing li {
+    margin-bottom:10px;
+}
+
+.browseHd_section_listing li .browseHd_section_title {
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+.browseHd_section_listing li .browseHd_section_title a {
+    text-decoration:none;
+}
+
+.browseHd_section_listing li .browseHd_section_count {display:none;}
+
+.browseHd_section_listing li .browseHd_section_count::before { content: "/"; margin-right:3px; color:#888;}
+.browseHd_section_listing li .browseHd_section_count::after { content: ""; }
+
+.browseHd .browse_authors .browse_author_name {
+    text-decoration:none;
+}
+
+.browseHd_author_articles_listing {
+    list-style: none;
+    padding-left:0;
+}
+
+.browseHd_author_articles_listing li {
+    margin-bottom:20px;
+}
+
+
+.browseHd_author_articles_listing li .browse_author_title a {
+    font-weight:700;
+    text-decoration:none;
+}
+
+.browseHd_author_articles_listing li .browse_author_issue a {
+    text-decoration:none;
+    font-size:85%;
+}
+
+.browseHd_category {
+    margin-top:10px;
+}
+
+.browseHd_category::first-child {
+    margin-top:0px;
+}
+
+.browseHd_category.is_sub {
+    margin-top:0;
+    margin-left:20px;
+}
+
+.browseHd_category_listing .browseHd_category.is_sub .browseHd_category_title {
+    font-weight:normal;
+}
+
+
+.browseHd_category_listing {
+    list-style: none;
+    padding-left:0;
+}
+
+.browseHd_category_listing li .browseHd_category_title {
+    font-weight:bold;
+}
+
+.browseHd_category_listing li .browseHd_category_title a {
+    text-decoration:none;
+}
+
+.article_count {
+    float: right;
+    padding: 10px 0;
+    font-size: 13px;
+    color: rgba(0,0,0,0.54);
+}
+
+

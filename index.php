@@ -1,23 +1,23 @@
 <?php
 
 /**
- * @defgroup plugins_blocks_developedBy Developed By block plugin
+ * @defgroup plugins_blocks_browseHd browseHd block plugin
  */
 
 /**
- * @file plugins/blocks/developedBy/index.php
+ * @file plugins/blocks/browseHd/index.php
  *
  * Copyright (c) 2014-2018 Simon Fraser University
  * Copyright (c) 2003-2018 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
- * @ingroup plugins_blocks_developedBy
- * @brief Wrapper for "developed by" block plugin.
+ * @ingroup plugins_blocks_browseHd
+ * @brief Wrapper for "browseHd" block plugin.
  *
  */
 
-require_once('BrowseBlockPlugin.inc.php');
+require_once('BrowseHdPlugin.inc.php');
 
-return new BrowseBlockPlugin();
+return new BrowseHdPlugin();
 
 ?>

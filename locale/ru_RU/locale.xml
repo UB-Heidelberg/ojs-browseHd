@@ -12,8 +12,21 @@
   -->
 
 <locale name="ru_RU" full_name="Русский">
-  <message key="plugins.block.browse.title">Browse</message>
-	<message key="plugins.block.browse.displayName">"Browse" Block</message>
-	<message key="plugins.block.browse.description">This plugin provides "browse by" author and section links in the sidebar.</message>
-  <message key="plugins.block.browse.link.section">By Section</message>
+        <message key="plugins.generic.browseHd.title">Обзор</message>
+	<message key="plugins.generic.browseHd.displayName">"Browse" Block</message>
+	<message key="plugins.generic.browseHd.description">This plugin provides "browse by" author and section links in the sidebar.</message>
+        <message key="plugins.generic.browseHd.link.section">By Section</message>
+        <message key="plugins.generic.browseHd.search.sectionIndex">Section Index</message>
+        <message key="plugins.generic.browseHd.link.category">By Category</message>
+        <message key="plugins.generic.browseHd.search.categoryIndex">Category Index</message>
+
+        <!-- Section Browsing -->
+        <message key="plugins.generic.browseHd.emptySection">Nothing has been published in this section yet.</message>
+        <message key="plugins.generic.browseHd.search.sectionDetails">Section Details</message>
+        <message key="plugins.generic.browseHd.section.browseTitles">{$numTitles} items</message>
+
+        <!-- Section Management -->
+        <message key="plugins.generic.browseHd.browsingLabel">Browsing</message>
+        <message key="plugins.generic.browseHd.enableBrowsing">Enable an archive of all submissions published in this section.</message>
+        <message key="plugins.generic.browseHd.browseByDescriptionLabel">Section Description</message>
 </locale>
