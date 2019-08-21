@@ -36,22 +36,43 @@
 <h1>{$authorName|escape}{if $affiliation}, {$affiliation|escape}{/if}{if $country}, {$country|escape}{/if}</h1>
 <div class="browseHd">
 <ul class="browseHd_author_articles_listing">
-{foreach from=$publishedArticles item=article}
-	{assign var=issueId value=$article->getIssueId()}
-	{assign var=issue value=$issues[$issueId]}
-	{assign var=issueUnavailable value=$issuesUnavailable.$issueId}
-	{assign var=sectionId value=$article->getSectionId()}
-	{assign var=journalId value=$article->getJournalId()}
-	{assign var=journal value=$journals[$journalId]}
-	{assign var=section value=$sections[$sectionId]}
-	{if $issue->getPublished() && $section && $journal}
-	<li>
+{iterate from=results item=result}
+{assign var=publishedArticle value=$result.publishedArticle}
+{assign var=article value=$result.article}
+{assign var=issue value=$result.issue}
+{assign var=issueAvailable value=$result.issueAvailable}
+{assign var=journal value=$result.journal}
+	{if $issue->getPublished() && $journal}
+        <li>
                 <div class="browse_author_title"><a href="{url journal=$journal->getPath() page="article" op="view" path=$article->getBestArticleId()}">{$article->getLocalizedTitle()|strip_unsafe_html}</a></div>
-		<div class="browse_author_issue"><a href="{url journal=$journal->getPath() page="issue" op="view" path=$issue->getBestIssueId()}">{$journal->getLocalizedName()|escape} {$issue->getIssueIdentification()|strip_unsafe_html|nl2br}</a></div>
-	</li>
-	{/if}
-{/foreach}
+                <div class="browse_author_issue"><a href="{url journal=$journal->getPath() page="issue" op="view" path=$issue->getBestIssueId()}">{$journal->getLocalizedName()|escape} {$issue->getIssueIdentification()|strip_unsafe_html|nl2br}</a></div>
+        </li>
+        {/if}
+{/iterate}
 </ul>
+{if $results->wasEmpty()}
+<p>
+{translate key="search.noResults"}
+</p>
+{else}
+                {if $prevPage > 1}
+                        {capture assign=prevUrl}{url op="authorDetails" givenName=$givenName familyName=$familyName authorName=$authorName searchPage=$prevPage}{/capture}
+                {elseif $prevPage === 1}
+                        {capture assign=prevUrl}{url op="authorDetails" givenName=$givenName familyName=$familyName authorName=$authorName searchPage=$prevPage}{/capture}
+                {/if}
+                {if $nextPage}
+                        {capture assign=nextUrl}{url op="authorDetails" givenName=$givenName familyName=$familyName authorName=$authorName searchPage=$nextPage}{/capture}
+                {/if}
+                {include
+                        file="frontend/components/pagination.tpl"
+                        prevUrl=$prevUrl
+                        nextUrl=$nextUrl
+                        showingStart=$showingStart
+                        showingEnd=$showingEnd
+                        total=$total
+                }
+{/if}
+
 </div>
 {include file="frontend/components/footer.tpl"}
 

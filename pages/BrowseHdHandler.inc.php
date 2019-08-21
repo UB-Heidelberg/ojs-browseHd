@@ -200,10 +200,15 @@ class BrowseHdHandler extends Handler {
 		$publishedArticleDao = DAORegistry::getDAO('PublishedArticleDAO');
 		while (!$result->EOF) {
 			$row = $result->getRowAssoc(false);
+/*
 			$publishedArticle = $publishedArticleDao->getByArticleId($row['submission_id']);
 			if ($publishedArticle) {
 				$publishedArticles[] = $publishedArticle;
-			}
+			}*/
+                        $publishedArticle = $row['submission_id'];
+                        if ($publishedArticle) {
+                                $publishedArticles[] = $publishedArticle;
+                        }
 			$result->MoveNext();
 		}
 		$result->Close();
@@ -231,6 +236,25 @@ class BrowseHdHandler extends Handler {
                                 'alphaList' => array_merge(array('-'), explode(' ', __('common.alphaList'))),
                                 'authors' => $authors,
                         ));
+                //Pagination
+                $page = $request->_requestVars['authorsPage'];
+                if(!isset($page)) {$page = 1;}
+             //   $page = isset($args[1]) ? (int) $args[1] : 1;
+                $context = $request->getContext();
+                $count = $context->getSetting('itemsPerPage') ? $context->getSetting('itemsPerPage') : Config::getVar('interface', 'items_per_page');
+                $offset = $page > 1 ? ($page - 1) * $count : 0;
+                $total = $authors->getCount();
+                $showingStart = $offset + 1;
+                $showingEnd = min($offset + $count, $offset + $total);
+                $nextPage = $total > $showingEnd ? $page + 1 : null;
+                $prevPage = $showingStart > 1 ? $page - 1 : null;
+                $templateMgr->assign(array(
+                                        'total' => $total,
+                                        'showingStart' => $showingStart,
+                                        'showingEnd' => $showingEnd,
+                                        'nextPage' => $nextPage,
+                                        'prevPage' => $prevPage,
+                                ));
                 $templateMgr->display($plugin->getTemplateResource('/browseAuthorIndexHd.tpl'));
         }
 
@@ -253,9 +277,42 @@ class BrowseHdHandler extends Handler {
 		$affiliation = $request->getUserVar('affiliation');
 		$country = $request->getUserVar('country');
 
-		$publishedArticles = $this->getPublishedArticlesForAuthor($journal?$journal->getId():null, $givenName, $familyName, $affiliation, $country);
+		$publishedArticleIds = $this->getPublishedArticlesForAuthor($journal?$journal->getId():null, $givenName, $familyName, $affiliation, $country);
+
+                $rangeInfo = $this->getRangeInfo($request, 'search');
+                $total = count($publishedArticleIds);
+                $publishedArticleIds = array_slice($publishedArticleIds, $rangeInfo->getCount() * ($rangeInfo->getPage()-1), $rangeInfo->getCount());
+                $articleSearch = new ArticleSearch();
+                $results = new VirtualArrayIterator($articleSearch->formatResults($publishedArticleIds), $total, $rangeInfo->getPage(), $rangeInfo->getCount());
+
+                //Pagination
+                $page = $request->_requestVars['searchPage'];
+                if(!isset($page)) {$page = 1;}
+             //   $page = isset($args[1]) ? (int) $args[1] : 1;
+                $context = $request->getContext();
+                $count = $context->getSetting('itemsPerPage') ? $context->getSetting('itemsPerPage') : Config::getVar('interface', 'items_per_page');
+                $offset = $page > 1 ? ($page - 1) * $count : 0;
+
+                $showingStart = $offset + 1;
+                $showingEnd = min($offset + $count, $offset + count($publishedArticleIds));
+                $nextPage = $total > $showingEnd ? $page + 1 : null;
+                $prevPage = $showingStart > 1 ? $page - 1 : null;
+
+                $templateMgr->assign(array(
+                                        'results' => $results,
+                                        'givenName' => $givenName,
+                                        'familyName' => $familyName,
+                                        'affiliation' => $affiliation,
+                                        'authorName' => $authorName,
+                                        'total' => $total,
+                                        'showingStart' => $showingStart,
+                                        'showingEnd' => $showingEnd,
+                                        'nextPage' => $nextPage,
+                                        'prevPage' => $prevPage,
+                                ));
 
 		// Load information associated with each article.
+/*
 		$journals = array();
 		$issues = array();
 		$sections = array();
@@ -289,7 +346,8 @@ class BrowseHdHandler extends Handler {
 		if (empty($publishedArticles)) {
 			$request->redirect(null, $request->getRequestedPage());
 		}
-
+*/              
+/* 
 		$templateMgr = TemplateManager::getManager($request);
 		$templateMgr->assign(array(
 			'publishedArticles' => $publishedArticles,
@@ -302,7 +360,7 @@ class BrowseHdHandler extends Handler {
 			'affiliation' => $affiliation,
 			'authorName' => $authorName
 		));
-
+*/
 		$countryDao = DAORegistry::getDAO('CountryDAO');
 		$country = $countryDao->getCountry($country);
 		$templateMgr->assign('country', $country);
@@ -377,7 +435,6 @@ class BrowseHdHandler extends Handler {
                 $publishedArticleIds = array_slice($publishedArticleIds, $rangeInfo->getCount() * ($rangeInfo->getPage()-1), $rangeInfo->getCount());
                 $articleSearch = new ArticleSearch();
                 $results = new VirtualArrayIterator($articleSearch->formatResults($publishedArticleIds), $total, $rangeInfo->getPage(), $rangeInfo->getCount());
-
                 //Pagination
                 $page = $request->_requestVars['searchPage'];
                 if(!isset($page)) {$page = 1;}

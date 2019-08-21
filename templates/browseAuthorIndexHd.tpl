@@ -65,9 +65,26 @@
 	<br/>
 {/iterate}
 {if !$authors->wasEmpty()}
-	<br />
-	{page_info iterator=$authors}&nbsp;&nbsp;&nbsp;&nbsp;{page_links anchor="authors" iterator=$authors name="authors" searchInitial=$searchInitial}
+                {if $prevPage > 1}
+                        {capture assign=prevUrl}{url op="authors" searchInitial=$sectionId authorsPage=$prevPage}{/capture}
+                {elseif $prevPage === 1}
+                        {capture assign=prevUrl}{url op="authors" searchInitial=$sectionId authorsPage=$prevPage}{/capture}
+                {/if}
+                {if $nextPage}
+                        {capture assign=nextUrl}{url op="authors" searchInitial=$sectionId authorsPage=$nextPage}{/capture}
+                {/if}
+                {include
+                        file="frontend/components/pagination.tpl"
+                        prevUrl=$prevUrl
+                        nextUrl=$nextUrl
+                        showingStart=$showingStart
+                        showingEnd=$showingEnd
+                        total=$total
+                }
 {else}
+        <p>
+        {translate key="search.noResults"}
+        </p>
 {/if}
 </div>
 </div>
