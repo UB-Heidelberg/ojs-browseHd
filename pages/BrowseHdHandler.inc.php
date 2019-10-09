@@ -254,6 +254,7 @@ class BrowseHdHandler extends Handler {
                                         'showingEnd' => $showingEnd,
                                         'nextPage' => $nextPage,
                                         'prevPage' => $prevPage,
+                                        'searchInitial' => $searchInitial,
                                 ));
                 $templateMgr->display($plugin->getTemplateResource('/browseAuthorIndexHd.tpl'));
         }

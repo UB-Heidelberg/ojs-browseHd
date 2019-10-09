@@ -66,12 +66,12 @@
 {/iterate}
 {if !$authors->wasEmpty()}
                 {if $prevPage > 1}
-                        {capture assign=prevUrl}{url op="authors" searchInitial=$sectionId authorsPage=$prevPage}{/capture}
+                        {capture assign=prevUrl}{url op="authors" searchInitial=$searchInitial authorsPage=$prevPage}{/capture}
                 {elseif $prevPage === 1}
-                        {capture assign=prevUrl}{url op="authors" searchInitial=$sectionId authorsPage=$prevPage}{/capture}
+                        {capture assign=prevUrl}{url op="authors" searchInitial=$searchInitial authorsPage=$prevPage}{/capture}
                 {/if}
                 {if $nextPage}
-                        {capture assign=nextUrl}{url op="authors" searchInitial=$sectionId authorsPage=$nextPage}{/capture}
+                        {capture assign=nextUrl}{url op="authors" searchInitial=$searchInitial authorsPage=$nextPage}{/capture}
                 {/if}
                 {include
                         file="frontend/components/pagination.tpl"
