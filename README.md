@@ -35,4 +35,4 @@ To install the plugin:
 Documentation, bug listings, and updates can be found on this plugin's homepage
  <https://github.com/UB-Heidelberg/ojs-browseHd/>.
 
-[Issues ](https://github.com/UB-Heidelberg/ojs-browseHd/issues)
+* Issues (https://github.com/UB-Heidelberg/ojs-browseHd/issues)
