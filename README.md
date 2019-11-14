@@ -9,7 +9,7 @@ This plugin provides the sidebar an browse block for issues, authors, sections a
 
 # License
 
-This plugin is licensed under the GNU General Public License v3.
+This plugin is licensed under the GNU General Public License v2.
 See the accompanying LICENSE file for the full terms.
 
 # System Requirements
@@ -33,4 +33,4 @@ To install the plugin:
 # Contact/Support
 
 Documentation, bug listings, and updates can be found on this plugin's homepage
- <https://github.com/UB-Heidelberg/ojs-browseHd>.
+ <https://github.com/UB-Heidelberg/ojs-browseHd/issues>.
